@@ -34,16 +34,15 @@ public class Program {
 			System.out.print("Check-out date (DD/MM/YYYY): ");
 			checkOut = sdf.parse(sc.next());
 
+
 			String error = reservation.updateDates(checkIn, checkOut);
-			
-				if(error != null) {
-					System.out.print("Reservation: " + error);
-				}
-				else {
-					System.out.print("Reservation: " + reservation);
-				}
+			if (error != null) {
+				System.out.print("Error in reservation: " + error);
+			} else {
+				System.out.print("Reservation: " + reservation);
 			}
-			sc.close();	
 		}
-		
+		sc.close();
 	}
+
+}
